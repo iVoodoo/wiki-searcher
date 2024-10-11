@@ -1,0 +1,37 @@
+@import '@styles/variables';
+
+.wiki {
+  padding-bottom: 50px;
+  & > *:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 10px;
+
+    @media (width <= 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (width <= 481px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+
+  &__response {
+    font-size: 20px;
+    font-weight: 400;
+
+    &_bad {
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import '@styles/variables';
+
+.input {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  column-gap: 10px;
+  margin-block: 10px;
+  height: 64px;
+
+  &__field {
+    height: 100%;
+    max-width: 450px;
+    width: 100%;
+    padding: 20px 25px;
+    border: none;
+    border-radius: $border-radius-s;
+    background-color: $color-white;
+    color: $color-dark;
+    font-size: 18px;
+    font-weight: 400;
+
+    &::placeholder {
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__button {
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: $border-radius-s;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: $color-dark;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-dark;
+      background-color: $color-white;
+
+      & > svg {
+        color: $color-dark;
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    color: $color-white;
+  }
+}
