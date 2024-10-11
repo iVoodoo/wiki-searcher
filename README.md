@@ -1,50 +1,52 @@
-# React + TypeScript + Vite
+# Wiki-searcher
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Поисковик по Википедии. Приложение находит все статьи, в которых так или иначе упоминается указанное слово/словосочетание.
 
-Currently, two official plugins are available:
+## Ссылка на приложение
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://ivoodoo.github.io/wiki-searcher/
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Что сделано
 
-- Configure the top-level `parserOptions` property like this:
+- Поиск статей через API Википеднии
+- Найденные статьи загружаются порциями по 10 штук
+- Возможность подгрузки дополнительных статей
+- Адаптация под мобильные устройства
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+
+
+
+## Используемые технологии
+
+**Client:** React, Typescript, SCSS, clsx, axios, Mobx
+
+**Code style:** ESLint, Prettier 
+
+
+
+## Запустить локально
+
+Клонируем репозиторий
+
+```bash
+  git clone https://github.com/iVoodoo/wiki-searcher.git
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Пермещаемся в папку проекта
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```bash
+  cd wiki-searcher
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+Устанавливаем зависимости
+
+```bash
+  yarn install
+```
+
+Запускаем проект
+
+```bash
+  yarn dev
 ```
